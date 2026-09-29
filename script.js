@@ -517,5 +517,188 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => success.classList.add('hidden'), 5000);
             }, 1000);
         });
+    // --- 14. Scroll Reveal ---
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal, .stagger-grid').forEach(el => revealObserver.observe(el));
+
+    // --- 14b. Timeline Reveal ---
+    const timelineObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.remove('opacity-0', 'translate-y-8');
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+            }
+        });
+    }, { threshold: 0.2, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.timeline-entry').forEach(el => timelineObserver.observe(el));
+
+    // --- 15. Typewriter Effect ---
+    const typeWriterEl = document.getElementById('typewriter');
+    if (typeWriterEl) {
+        const roles = ["Robotics Engineer.", "Embedded Systems.", "Perception Architect."];
+        let roleIdx = 0;
+        let charIdx = 0;
+        let isDeleting = false;
+        
+        const typeRole = () => {
+            const currentRole = roles[roleIdx];
+            
+            if (isDeleting) {
+                typeWriterEl.innerText = currentRole.substring(0, charIdx - 1);
+                charIdx--;
+            } else {
+                typeWriterEl.innerText = currentRole.substring(0, charIdx + 1);
+                charIdx++;
+            }
+            
+            let typeSpeed = isDeleting ? 50 : 100;
+            
+            if (!isDeleting && charIdx === currentRole.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIdx === 0) {
+                isDeleting = false;
+                roleIdx = (roleIdx + 1) % roles.length;
+                typeSpeed = 500;
+            }
+            setTimeout(typeRole, typeSpeed);
+        };
+        setTimeout(typeRole, 2000); // Wait for terminal to mostly finish
+    }
+
+    // --- 16. Stat Counters ---
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = parseInt(entry.target.getAttribute('data-target'));
+                const duration = 2000; 
+                const step = target / (duration / 16); 
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        entry.target.innerText = Math.ceil(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        entry.target.innerText = target;
+                    }
+                };
+                updateCounter();
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    document.querySelectorAll('.counter').forEach(counter => counterObserver.observe(counter));
+
+    // --- 17. Mobile Menu & Scroll Progress & Back to Top ---
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const backToTopBtn = document.getElementById('back-to-top');
+    const progressBar = document.getElementById('progress-bar');
+
+    if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+
+    window.addEventListener('scroll', () => {
+        // Progress bar
+        if (progressBar) {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            progressBar.style.width = scrolled + "%";
+        }
+        
+        // Back to top
+        if (backToTopBtn) {
+            if (window.scrollY > 500) {
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+            }
+        }
+    }, { passive: true });
+    
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // --- 18. Lightbox Close Logic ---
+    const lightbox = document.getElementById('lightbox');
+    const closeBtn = document.getElementById('lightbox-close');
+    
+    const closeLightbox = () => {
+        if(lightbox) {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                document.getElementById('lightbox-img').src = '';
+            }, 300);
+        }
+    };
+    
+    if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+    if (lightbox) {
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
+        });
     }
 });
+
+// --- 19. Global Lightbox Trigger ---
+window.openLightbox = (slug, title, date, desc, tags, link) => {
+    const lightbox = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    const titleEl = document.getElementById('lightbox-title');
+    const dateEl = document.getElementById('lightbox-date');
+    const descEl = document.getElementById('lightbox-desc');
+    const tagsEl = document.getElementById('lightbox-tags');
+    const linkEl = document.getElementById('lightbox-link');
+    
+    img.src = `assets/images/${slug}/cover.jpg`;
+    titleEl.innerText = title;
+    
+    if (date) {
+        dateEl.innerText = date;
+        dateEl.style.display = 'block';
+    } else {
+        dateEl.style.display = 'none';
+    }
+    
+    descEl.innerText = desc;
+    tagsEl.innerHTML = '';
+    
+    tags.forEach(tag => {
+        const span = document.createElement('span');
+        span.className = 'text-[10px] font-mono bg-accent-soft text-accent px-2 py-1 rounded';
+        span.innerText = tag;
+        tagsEl.appendChild(span);
+    });
+    
+    if (link) {
+        linkEl.href = link;
+        linkEl.style.display = 'inline-flex';
+    } else {
+        linkEl.style.display = 'none';
+    }
+    
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+};
