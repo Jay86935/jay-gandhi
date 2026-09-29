@@ -236,8 +236,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 };
                 requestAnimationFrame(animateRing);
                 document.querySelectorAll('a, button, .project-card, .skill-chip').forEach(el => {
-                    el.addEventListener('mouseenter', () => cursorRing.classList.add('scale-150', 'bg-accent-soft'));
-                    el.addEventListener('mouseleave', () => cursorRing.classList.remove('scale-150', 'bg-accent-soft'));
+                    el.addEventListener('mouseenter', () => cursorRing.classList.add('scale-150', 'bg-white/10'));
+                    el.addEventListener('mouseleave', () => cursorRing.classList.remove('scale-150', 'bg-white/10'));
                 });
             } else if (cursorDot) { cursorDot.remove(); if(cursorRing) cursorRing.remove(); }
         });
@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     // clear with scaled width
                     ctx.clearRect(0, 0, canvas.width*2, canvas.height*2);
-                    const accentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent-soft').trim() || 'rgba(255, 107, 44, 0.2)';
+                    const accentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent-soft').trim() || 'rgba(250, 250, 250, 0.06)';
                     const mouseRect = canvas.getBoundingClientRect();
                     const localMouseX = mouseX - mouseRect.left;
                     const localMouseY = mouseY - mouseRect.top;
@@ -342,7 +342,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -5;
                         const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 5;
                         card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-                        if (spotlight) spotlight.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.1) 0%, transparent 80%)`;
+                        if (spotlight) spotlight.style.background = `radial-gradient(circle at ${x}px ${y}px, var(--accent-soft) 0%, transparent 80%)`;
                     });
                     card.addEventListener('mouseleave', () => {
                         card.style.transform = ''; if (spotlight) spotlight.style.background = 'transparent';
@@ -381,8 +381,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => { b.classList.remove('active', 'bg-accent', 'text-accent-text'); b.classList.add('bg-surface', 'border', 'border-border', 'text-text'); });
-                    btn.classList.add('active', 'bg-accent', 'text-accent-text'); btn.classList.remove('bg-surface', 'border', 'border-border', 'text-text');
+                    filterBtns.forEach(b => { b.classList.remove('active', 'bg-accent', 'text-on-accent'); b.classList.add('bg-surface', 'border', 'border-border', 'text-text'); });
+                    btn.classList.add('active', 'bg-accent', 'text-on-accent'); btn.classList.remove('bg-surface', 'border', 'border-border', 'text-text');
                     updateProjects();
                 });
             });
@@ -414,7 +414,7 @@ window.openLightbox = (slug, title, date, desc, tags, link) => {
             tagsEl.innerHTML = '';
             (tags||[]).forEach(tag => {
                 const span = document.createElement('span');
-                span.className = 'text-[10px] font-mono bg-accent-soft text-accent px-2 py-1 rounded';
+                span.className = 'text-[10px] font-mono bg-transparent border border-border text-text-muted px-2 py-1 rounded';
                 span.innerText = tag;
                 tagsEl.appendChild(span);
             });
@@ -430,3 +430,7 @@ window.openLightbox = (slug, title, date, desc, tags, link) => {
         }
     } catch (e) { console.error('Lightbox error:', e); }
 };
+
+
+
+

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jay Gandhi | Robotics & Embedded Systems Engineer</title>
     <meta name="description" content="Portfolio of Jay Gandhi, an undergraduate Automation & Robotics Engineer specializing in embedded systems, autonomous systems, and perception.">
-    <meta name="theme-color" content="#FF6B2C">
+    <meta name="theme-color" content="#09090B">
     
     <meta property="og:title" content="Jay Gandhi | Robotics & Embedded Systems Engineer">
     <meta property="og:description" content="Portfolio of Jay Gandhi, specializing in embedded systems, autonomous systems, and perception.">
@@ -14,7 +14,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://Jay86935.github.io/jay-gandhi/">
     <meta name="twitter:card" content="summary_large_image">
-    <!-- Updated favicon to orange accent -->
+    
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23FF6B2C%22/><text y=%22.9em%22 font-size=%2280%22 fill=%22%230C0B0A%22>🤖</text></svg>">
     
     <script type="application/ld+json">
@@ -70,11 +70,11 @@
 <body class="bg-bg text-text font-sans antialiased overflow-x-hidden transition-colors duration-300">
 
     <!-- Custom Cursor -->
-    <div id="cursor-dot" class="hidden lg:block pointer-events-none fixed top-0 left-0 w-2 h-2 bg-accent rounded-full z-[9999] transform -translate-x-1/2 -translate-y-1/2"></div>
-    <div id="cursor-ring" class="hidden lg:block pointer-events-none fixed top-0 left-0 w-8 h-8 border border-accent rounded-full z-[9998] transition-transform duration-100 ease-out transform -translate-x-1/2 -translate-y-1/2 opacity-50"></div>
+    <div id="cursor-dot" class="hidden lg:block pointer-events-none fixed top-0 left-0 w-2 h-2 bg-white rounded-full z-[9999] transform -translate-x-1/2 -translate-y-1/2 mix-blend-difference"></div>
+    <div id="cursor-ring" class="hidden lg:block pointer-events-none fixed top-0 left-0 w-8 h-8 border border-white rounded-full z-[9998] transition-transform duration-100 ease-out transform -translate-x-1/2 -translate-y-1/2 opacity-50 mix-blend-difference"></div>
 
     <!-- Terminal Intro -->
-    <div id="terminal-intro" class="fixed inset-0 z-[100] bg-bg flex flex-col items-center justify-center font-mono text-accent p-4 transition-opacity duration-500">
+    <div id="terminal-intro" class="fixed inset-0 z-[100] bg-bg flex flex-col items-center justify-center font-mono text-text p-4 transition-opacity duration-500">
         <div class="max-w-lg w-full">
             <div id="terminal-text" class="mb-4 whitespace-pre-wrap leading-relaxed text-sm md:text-base"></div>
             <button id="skip-intro" class="text-text-muted hover:text-text text-xs border border-border px-3 py-1 rounded transition-colors mt-4 opacity-0 transition-opacity duration-1000">Skip Intro [Esc]</button>
@@ -106,33 +106,33 @@
     <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-bg/80 border-b border-border" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <a href="#home" class="font-mono font-bold text-xl text-text tracking-tighter hover:text-accent transition-colors" aria-label="Home">
-                    <span class="text-accent">></span> JG
+                <a href="#home" class="font-mono font-bold text-xl text-text tracking-tighter hover:text-text transition-colors" aria-label="Home">
+                    <span class="text-text">></span> JG
                 </a>
                 
                 <div class="hidden lg:flex space-x-6 font-mono text-sm items-center">
-                    <a href="#about" class="nav-link text-text-muted hover:text-accent transition-colors">About</a>
-                    <a href="#research" class="nav-link text-text-muted hover:text-accent transition-colors">Research & Exp</a>
-                    <a href="#projects" class="nav-link text-text-muted hover:text-accent transition-colors">Projects</a>
-                    <a href="#skills" class="nav-link text-text-muted hover:text-accent transition-colors">Skills</a>
-                    <a href="#achievements" class="nav-link text-text-muted hover:text-accent transition-colors">Achievements</a>
-                    <a href="#cv" class="nav-link text-text-muted hover:text-accent transition-colors">CV</a>
-                    <a href="#contact" class="nav-link text-text-muted hover:text-accent transition-colors">Contact</a>
+                    <a href="#about" class="nav-link text-text-muted hover:text-text relative transition-colors">About</a>
+                    <a href="#research" class="nav-link text-text-muted hover:text-text relative transition-colors">Research & Exp</a>
+                    <a href="#projects" class="nav-link text-text-muted hover:text-text relative transition-colors">Projects</a>
+                    <a href="#skills" class="nav-link text-text-muted hover:text-text relative transition-colors">Skills</a>
+                    <a href="#achievements" class="nav-link text-text-muted hover:text-text relative transition-colors">Achievements</a>
+                    <a href="#cv" class="nav-link text-text-muted hover:text-text relative transition-colors">CV</a>
+                    <a href="#contact" class="nav-link text-text-muted hover:text-text relative transition-colors">Contact</a>
                     
-                    <button class="cmd-trigger text-text-muted hover:text-accent transition-colors flex items-center" aria-label="Open Command Palette">
+                    <button class="cmd-trigger text-text-muted hover:text-text relative transition-colors flex items-center" aria-label="Open Command Palette">
                         <svg class="w-5 h-5 inline-block"><use href="#icon-terminal"></use></svg>
                         <kbd class="hidden xl:inline-block ml-2 text-[10px] font-sans bg-surface-2 border border-border rounded px-1.5 py-0.5 text-text-muted">Ctrl+K</kbd>
                     </button>
                     
-                    <button id="theme-toggle" class="text-text-muted hover:text-accent transition-colors rounded p-1" aria-label="Toggle Theme">
+                    <button id="theme-toggle" class="text-text-muted hover:text-text relative transition-colors rounded p-1" aria-label="Toggle Theme">
                         <i class="fas fa-moon" id="moon-icon"></i>
                         <i class="fas fa-sun hidden" id="sun-icon"></i>
                     </button>
                 </div>
 
                 <div class="lg:hidden flex items-center space-x-4">
-                    <button class="cmd-trigger text-text-muted hover:text-accent" aria-label="Open Command Palette"><svg class="w-5 h-5 inline-block"><use href="#icon-search"></use></svg></button>
-                    <button id="mobile-theme-toggle" class="text-text-muted hover:text-accent p-1" aria-label="Toggle Theme">
+                    <button class="cmd-trigger text-text-muted hover:text-text relative" aria-label="Open Command Palette"><svg class="w-5 h-5 inline-block"><use href="#icon-search"></use></svg></button>
+                    <button id="mobile-theme-toggle" class="text-text-muted hover:text-text relative p-1" aria-label="Toggle Theme">
                         <i class="fas fa-moon" id="mobile-moon-icon"></i>
                         <i class="fas fa-sun hidden" id="mobile-sun-icon"></i>
                     </button>
@@ -173,10 +173,10 @@
                     Building intelligent robotic and embedded systems at the intersection of perception, autonomy, electronics, and real-time control.
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <a href="#projects" class="magnetic bg-accent hover:bg-accent-hover text-accent-text px-6 py-3 rounded font-mono text-sm transition-all shadow-glow inline-flex items-center">
+                    <a href="#projects" class="magnetic bg-accent hover:bg-accent-hover text-on-accent px-6 py-3 rounded font-mono text-sm transition-all  inline-flex items-center">
                         <svg class="mr-2 w-5 h-5 inline-block"><use href="#icon-microchip"></use></svg>View Projects
                     </a>
-                    <a href="Jay_Gandhi_CV.pdf" target="_blank" class="magnetic border border-border hover:border-accent text-text hover:text-accent px-6 py-3 rounded font-mono text-sm transition-all inline-flex items-center">
+                    <a href="Jay_Gandhi_CV.pdf" target="_blank" class="magnetic border border-border hover:border-border-strong text-text hover:text-text px-6 py-3 rounded font-mono text-sm transition-all inline-flex items-center">
                         <svg class="mr-2 w-5 h-5 inline-block"><use href="#icon-file"></use></svg>Download CV
                     </a>
                 </div>
@@ -189,16 +189,16 @@
             </div>
 
             <div class="order-1 md:order-2 flex justify-center md:justify-end">
-                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl p-1 bg-gradient-to-tr from-accent-soft to-accent/30 shadow-glow-lg overflow-visible group">
-                    <div class="absolute -inset-2 bg-accent-soft rounded-3xl blur-xl transition-all duration-500 opacity-100"></div>
+                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl p-1 bg-gradient-to-tr from-accent-soft to-accent/30 -lg overflow-visible group">
+                    
                     <div class="absolute inset-1 rounded-2xl overflow-hidden bg-bg flex items-center justify-center relative z-10 border border-border">
                         <picture>
                             <source srcset="assets/images/profile.webp" type="image/webp">
                             <img src="assets/images/profile.jpg" alt="Jay Gandhi" width="800" height="800" fetchpriority="high" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         </picture>
-                        <div id="hero-fallback" class="hidden absolute inset-0 bg-surface flex-col items-center justify-center text-accent/50 circuit-bg p-4 text-center">
+                        <div id="hero-fallback" class="hidden absolute inset-0 bg-surface flex-col items-center justify-center text-text/50 circuit-bg p-4 text-center">
                             <svg class="text-6xl mb-4 opacity-50 pulse-anim w-5 h-5 inline-block"><use href="#icon-microchip"></use></svg>
-                            <span class="font-mono text-xs opacity-50 border border-accent/30 p-1 rounded bg-surface-2 text-text">SYS_AVATAR_MISSING</span>
+                            <span class="font-mono text-xs opacity-50 border border-border-strong p-1 rounded bg-surface-2 text-text">SYS_AVATAR_MISSING</span>
                         </div>
                     </div>
                 </div>
@@ -236,7 +236,7 @@
     <section id="about" class="py-24 px-4 z-10 relative bg-bg">
         <div class="max-w-5xl mx-auto reveal">
             <h2 class="text-3xl md:text-4xl font-bold text-text mb-12 font-mono flex items-center">
-                <span class="text-accent mr-3">01.</span> About Me
+                <span class="text-text mr-3">01.</span> About Me
             </h2>
             <div class="grid md:grid-cols-2 gap-12">
                 <div class="space-y-6 text-text-muted text-lg leading-relaxed">
@@ -244,22 +244,22 @@
                     <p>My academic and technical narrative is focused on autonomous systems, robotic perception, and real-time control. I design embedded solutions that bridge high-level algorithms with edge-computing hardware, enabling robots to navigate and interact with dynamic environments.</p>
                     
                     <div class="p-5 border border-border bg-surface rounded-lg shadow-sm font-mono text-sm mt-8 relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 w-16 h-16 bg-accent-soft rounded-bl-full -z-0"></div>
-                        <div class="text-accent mb-2 relative z-10">// Education</div>
+                        <div class="absolute top-0 right-0 w-16 h-16 bg-surface-2 rounded-bl-full -z-0"></div>
+                        <div class="text-text mb-2 relative z-10">// Education</div>
                         <h3 class="text-text font-bold text-lg relative z-10">B.Tech – Automation & Robotics Engineering</h3>
                         <p class="text-text-muted mt-1 relative z-10">JSPM Rajarshi Shahu College of Engineering, Pune</p>
                         <div class="flex justify-between mt-2 font-semibold relative z-10">
                             <span class="text-text-muted">2023–2027</span>
-                            <span class="text-accent">CGPA: 8.29/10</span>
+                            <span class="text-text">CGPA: 8.29/10</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="flex flex-col">
-                    <div class="mb-8 p-5 rounded-lg border border-accent/30 bg-accent-soft shadow-glow font-mono relative overflow-hidden group">
+                    <div class="mb-8 p-5 rounded-lg border border-border-strong bg-surface-2  font-mono relative overflow-hidden group">
                         <div class="flex items-center mb-3">
-                            <span class="w-2 h-2 rounded-full bg-accent pulse-dot mr-2"></span>
-                            <h3 class="text-sm font-bold text-accent uppercase tracking-wider">Currently Building</h3>
+                            <span class="w-2 h-2 rounded-full bg-support pulse-dot mr-2"></span>
+                            <h3 class="text-sm font-bold text-text uppercase tracking-wider">Currently Building</h3>
                         </div>
                         <p id="now-building-text" class="text-text text-sm leading-relaxed">Loading latest active project...</p>
                     </div>
@@ -272,7 +272,7 @@
     <section id="research" class="py-24 px-4 bg-surface border-y border-border z-10 relative">
         <div class="max-w-4xl mx-auto reveal">
             <h2 class="text-3xl md:text-4xl font-bold text-text mb-12 font-mono flex items-center">
-                <span class="text-accent mr-3">02.</span> Research & Experience
+                <span class="text-text mr-3">02.</span> Research & Experience
             </h2>
             
             <div class="relative ml-4 md:ml-0" id="timeline-container">
@@ -290,11 +290,11 @@
                         </div>
                         <h4 class="text-lg text-text-muted font-mono mb-4">Indian Institute of Science (IISc), Bengaluru</h4>
                         <ul class="space-y-2 text-text-muted text-sm">
-                            <li class="flex items-start"><svg class="text-accent mt-1 mr-2 w-5 h-5 inline-block"><use href="#icon-arrow-right"></use></svg> Contributing to an advanced robotics research project focusing on autonomous perception architectures and embedded control for dynamic environments.</li>
-                            <li class="flex items-start"><svg class="text-accent mt-1 mr-2 w-5 h-5 inline-block"><use href="#icon-arrow-right"></use></svg> Implementing ROS to bridge high-level path planning algorithms with edge-computing hardware.</li>
-                            <li class="flex items-start"><svg class="text-accent mt-1 mr-2 w-5 h-5 inline-block"><use href="#icon-arrow-right"></use></svg> Developing real-time vision pipelines and autonomous navigation models deployed on embedded Linux systems.</li>
-                            <li class="flex items-start"><svg class="text-accent mt-1 mr-2 w-5 h-5 inline-block"><use href="#icon-arrow-right"></use></svg> Programming STM32 microcontrollers for deterministic motor actuation and IMU/encoder sensor acquisition.</li>
-                            <li class="flex items-start"><svg class="text-accent mt-1 mr-2 w-5 h-5 inline-block"><use href="#icon-arrow-right"></use></svg> Developing custom sensor fusion nodes to reduce perception-to-actuation latency and localization drift.</li>
+                            <li class="flex items-start"><svg class="text-text mt-1 mr-2 w-5 h-5 inline-block"><use href="#icon-arrow-right"></use></svg> Contributing to an advanced robotics research project focusing on autonomous perception architectures and embedded control for dynamic environments.</li>
+                            <li class="flex items-start"><svg class="text-text mt-1 mr-2 w-5 h-5 inline-block"><use href="#icon-arrow-right"></use></svg> Implementing ROS to bridge high-level path planning algorithms with edge-computing hardware.</li>
+                            <li class="flex items-start"><svg class="text-text mt-1 mr-2 w-5 h-5 inline-block"><use href="#icon-arrow-right"></use></svg> Developing real-time vision pipelines and autonomous navigation models deployed on embedded Linux systems.</li>
+                            <li class="flex items-start"><svg class="text-text mt-1 mr-2 w-5 h-5 inline-block"><use href="#icon-arrow-right"></use></svg> Programming STM32 microcontrollers for deterministic motor actuation and IMU/encoder sensor acquisition.</li>
+                            <li class="flex items-start"><svg class="text-text mt-1 mr-2 w-5 h-5 inline-block"><use href="#icon-arrow-right"></use></svg> Developing custom sensor fusion nodes to reduce perception-to-actuation latency and localization drift.</li>
                         </ul>
                     </div>
 
@@ -329,22 +329,22 @@
         <div class="max-w-6xl mx-auto reveal">
             <div class="flex flex-wrap justify-between items-end mb-8 gap-4">
                 <h2 class="text-3xl md:text-4xl font-bold text-text font-mono flex items-center">
-                    <span class="text-accent mr-3">03.</span> Featured Projects
+                    <span class="text-text mr-3">03.</span> Featured Projects
                 </h2>
                 <div class="relative w-full md:w-64">
                     <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 text-text-muted w-5 h-5 inline-block"><use href="#icon-search"></use></svg>
-                    <input type="text" id="project-search" placeholder="Search projects..." class="w-full bg-surface border border-border rounded-full py-1.5 pl-9 pr-4 text-sm focus:border-accent transition-colors text-text font-mono" aria-label="Search projects">
+                    <input type="text" id="project-search" placeholder="Search projects..." class="w-full bg-surface border border-border rounded-full py-1.5 pl-9 pr-4 text-sm focus:border-border-strong transition-colors text-text font-mono" aria-label="Search projects">
                 </div>
             </div>
 
             <!-- Filters -->
             <div class="flex flex-wrap items-center gap-2 mb-6 font-mono text-sm" id="project-filters">
-                <button class="filter-btn active bg-accent text-accent-text px-4 py-1.5 rounded-full" data-filter="all">ALL</button>
-                <button class="filter-btn bg-surface border border-border text-text hover:border-accent px-4 py-1.5 rounded-full transition-colors" data-filter="robotics">ROBOTICS</button>
-                <button class="filter-btn bg-surface border border-border text-text hover:border-accent px-4 py-1.5 rounded-full transition-colors" data-filter="embedded">EMBEDDED</button>
-                <button class="filter-btn bg-surface border border-border text-text hover:border-accent px-4 py-1.5 rounded-full transition-colors" data-filter="autonomous">AUTONOMOUS</button>
-                <button class="filter-btn bg-surface border border-border text-text hover:border-accent px-4 py-1.5 rounded-full transition-colors" data-filter="vision">VISION</button>
-                <button class="filter-btn bg-surface border border-border text-text hover:border-accent px-4 py-1.5 rounded-full transition-colors" data-filter="automation">AUTOMATION</button>
+                <button class="filter-btn active bg-accent text-on-accent px-4 py-1.5 rounded-full" data-filter="all">ALL</button>
+                <button class="filter-btn bg-surface border border-border text-text hover:border-border-strong px-4 py-1.5 rounded-full transition-colors" data-filter="robotics">ROBOTICS</button>
+                <button class="filter-btn bg-surface border border-border text-text hover:border-border-strong px-4 py-1.5 rounded-full transition-colors" data-filter="embedded">EMBEDDED</button>
+                <button class="filter-btn bg-surface border border-border text-text hover:border-border-strong px-4 py-1.5 rounded-full transition-colors" data-filter="autonomous">AUTONOMOUS</button>
+                <button class="filter-btn bg-surface border border-border text-text hover:border-border-strong px-4 py-1.5 rounded-full transition-colors" data-filter="vision">VISION</button>
+                <button class="filter-btn bg-surface border border-border text-text hover:border-border-strong px-4 py-1.5 rounded-full transition-colors" data-filter="automation">AUTOMATION</button>
             </div>
             
             <div id="project-count" class="text-xs font-mono text-text-muted mb-6 font-semibold">Showing 6 of 6 projects</div>
@@ -360,11 +360,11 @@
                         <img src="assets/images/agrobot/cover.jpg" alt="AgroBot Cover" loading="lazy" width="800" height="450" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.outerHTML='<div class=\'w-full h-full bg-gradient-to-tr from-surface to-surface-2 flex items-center justify-center\'><i class=\'fas fa-tractor text-4xl text-text-muted/50\'></i></div>';">
                     </div>
                     <div class="p-6 relative z-20">
-                        <h3 class="text-xl font-bold text-text mb-2 group-hover:text-accent transition-colors">AgroBot</h3>
+                        <h3 class="text-xl font-bold text-text mb-2 group-hover:text-text transition-colors">AgroBot</h3>
                         <p class="text-text-muted text-sm line-clamp-3 mb-4">Autonomous field monitoring robot with OpenCV lane detection and sensor fusion obstacle avoidance.</p>
                         <div class="flex flex-wrap gap-2 tags-container">
-                            <span class="text-[10px] font-mono bg-accent-soft text-accent px-2 py-1 rounded">OpenCV</span>
-                            <span class="text-[10px] font-mono bg-accent-soft text-accent px-2 py-1 rounded">Raspberry Pi</span>
+                            <span class="text-[10px] font-mono bg-surface-2 text-text px-2 py-1 rounded">OpenCV</span>
+                            <span class="text-[10px] font-mono bg-surface-2 text-text px-2 py-1 rounded">Raspberry Pi</span>
                         </div>
                     </div>
                 </button>
@@ -377,11 +377,11 @@
                         <img src="assets/images/long-range-wireless/cover.jpg" alt="RF Control Cover" loading="lazy" width="800" height="450" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.outerHTML='<div class=\'w-full h-full bg-gradient-to-tr from-surface to-surface-2 flex items-center justify-center\'><i class=\'fas fa-broadcast-tower text-4xl text-text-muted/50\'></i></div>';">
                     </div>
                     <div class="p-6 relative z-20">
-                        <h3 class="text-xl font-bold text-text mb-2 group-hover:text-accent transition-colors">Long-Range Wireless</h3>
+                        <h3 class="text-xl font-bold text-text mb-2 group-hover:text-text transition-colors">Long-Range Wireless</h3>
                         <p class="text-text-muted text-sm line-clamp-3 mb-4">1 km-range RF control system with custom packet protocol and adaptive retry logic.</p>
                         <div class="flex flex-wrap gap-2 tags-container">
-                            <span class="text-[10px] font-mono bg-accent-soft text-accent px-2 py-1 rounded">Embedded C</span>
-                            <span class="text-[10px] font-mono bg-accent-soft text-accent px-2 py-1 rounded">nRF24L01+</span>
+                            <span class="text-[10px] font-mono bg-surface-2 text-text px-2 py-1 rounded">Embedded C</span>
+                            <span class="text-[10px] font-mono bg-surface-2 text-text px-2 py-1 rounded">nRF24L01+</span>
                         </div>
                     </div>
                 </button>
@@ -394,11 +394,11 @@
                         <img src="assets/images/team-dhruvishaya/cover.jpg" alt="Avionics Cover" loading="lazy" width="800" height="450" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.outerHTML='<div class=\'w-full h-full bg-gradient-to-tr from-surface to-surface-2 flex items-center justify-center\'><i class=\'fas fa-rocket text-4xl text-text-muted/50\'></i></div>';">
                     </div>
                     <div class="p-6 relative z-20">
-                        <h3 class="text-xl font-bold text-text mb-2 group-hover:text-accent transition-colors">Avionics Stack</h3>
+                        <h3 class="text-xl font-bold text-text mb-2 group-hover:text-text transition-colors">Avionics Stack</h3>
                         <p class="text-text-muted text-sm line-clamp-3 mb-4">Rocket telemetry, ignition control, and onboard data logging electronics.</p>
                         <div class="flex flex-wrap gap-2 tags-container">
-                            <span class="text-[10px] font-mono bg-accent-soft text-accent px-2 py-1 rounded">Hardware</span>
-                            <span class="text-[10px] font-mono bg-accent-soft text-accent px-2 py-1 rounded">Telemetry</span>
+                            <span class="text-[10px] font-mono bg-surface-2 text-text px-2 py-1 rounded">Hardware</span>
+                            <span class="text-[10px] font-mono bg-surface-2 text-text px-2 py-1 rounded">Telemetry</span>
                         </div>
                     </div>
                 </button>
@@ -411,11 +411,11 @@
                         <img src="assets/images/jasc-waste-sorting/cover.jpg" alt="Waste Sorting Cover" loading="lazy" width="800" height="450" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.outerHTML='<div class=\'w-full h-full bg-gradient-to-tr from-surface to-surface-2 flex items-center justify-center\'><i class=\'fas fa-cogs text-4xl text-text-muted/50\'></i></div>';">
                     </div>
                     <div class="p-6 relative z-20">
-                        <h3 class="text-xl font-bold text-text mb-2 group-hover:text-accent transition-colors">Automated Sorting System</h3>
+                        <h3 class="text-xl font-bold text-text mb-2 group-hover:text-text transition-colors">Automated Sorting System</h3>
                         <p class="text-text-muted text-sm line-clamp-3 mb-4">Industrial waste-sorting system using inductive, capacitive, and IR sensors.</p>
                         <div class="flex flex-wrap gap-2 tags-container">
-                            <span class="text-[10px] font-mono bg-accent-soft text-accent px-2 py-1 rounded">Automation</span>
-                            <span class="text-[10px] font-mono bg-accent-soft text-accent px-2 py-1 rounded">TIA Portal</span>
+                            <span class="text-[10px] font-mono bg-surface-2 text-text px-2 py-1 rounded">Automation</span>
+                            <span class="text-[10px] font-mono bg-surface-2 text-text px-2 py-1 rounded">TIA Portal</span>
                         </div>
                     </div>
                 </button>
@@ -428,10 +428,10 @@
                         <img src="assets/images/led-cube/cover.jpg" alt="LED Cube Cover" loading="lazy" width="800" height="450" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.outerHTML='<div class=\'w-full h-full bg-gradient-to-tr from-surface to-surface-2 flex items-center justify-center\'><i class=\'fas fa-cube text-4xl text-text-muted/50\'></i></div>';">
                     </div>
                     <div class="p-6 relative z-20">
-                        <h3 class="text-xl font-bold text-text mb-2 group-hover:text-accent transition-colors">8x8x8 LED Cube</h3>
+                        <h3 class="text-xl font-bold text-text mb-2 group-hover:text-text transition-colors">8x8x8 LED Cube</h3>
                         <p class="text-text-muted text-sm line-clamp-3 mb-4">512-LED volumetric display with shift-register multiplexing and 3D animations.</p>
                         <div class="flex flex-wrap gap-2 tags-container">
-                            <span class="text-[10px] font-mono bg-accent-soft text-accent px-2 py-1 rounded">Hardware</span>
+                            <span class="text-[10px] font-mono bg-surface-2 text-text px-2 py-1 rounded">Hardware</span>
                         </div>
                     </div>
                 </button>
@@ -444,10 +444,10 @@
                         <img src="assets/images/acoustic-levitation/cover.jpg" alt="Acoustic Cover" loading="lazy" width="800" height="450" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.onerror=null; this.outerHTML='<div class=\'w-full h-full bg-gradient-to-tr from-surface to-surface-2 flex items-center justify-center\'><i class=\'fas fa-wave-square text-4xl text-text-muted/50\'></i></div>';">
                     </div>
                     <div class="p-6 relative z-20">
-                        <h3 class="text-xl font-bold text-text mb-2 group-hover:text-accent transition-colors">Acoustic Levitation</h3>
+                        <h3 class="text-xl font-bold text-text mb-2 group-hover:text-text transition-colors">Acoustic Levitation</h3>
                         <p class="text-text-muted text-sm line-clamp-3 mb-4">Ultrasonic levitation device utilizing phased transducer arrays to trap particles.</p>
                         <div class="flex flex-wrap gap-2 tags-container">
-                            <span class="text-[10px] font-mono bg-accent-soft text-accent px-2 py-1 rounded">Acoustics</span>
+                            <span class="text-[10px] font-mono bg-surface-2 text-text px-2 py-1 rounded">Acoustics</span>
                         </div>
                     </div>
                 </button>
@@ -455,7 +455,7 @@
             </div>
             
             <div class="mt-12 text-center">
-                <a href="https://github.com/Jay86935" target="_blank" class="magnetic inline-flex items-center border border-border hover:border-accent text-text hover:text-accent px-8 py-3 rounded font-mono text-sm transition-all hover:bg-surface-2">
+                <a href="https://github.com/Jay86935" target="_blank" class="magnetic inline-flex items-center border border-border hover:border-border-strong text-text hover:text-text px-8 py-3 rounded font-mono text-sm transition-all hover:bg-surface-2">
                     <svg class="mr-2 w-5 h-5 inline-block"><use href="#icon-github"></use></svg>View all projects on GitHub
                 </a>
             </div>
@@ -466,13 +466,13 @@
     <section id="skills" class="py-24 px-4 bg-surface border-y border-border z-10 relative">
         <div class="max-w-5xl mx-auto reveal stagger-grid">
             <h2 class="text-3xl md:text-4xl font-bold text-text mb-12 font-mono flex items-center">
-                <span class="text-accent mr-3">04.</span> Technical Skills
+                <span class="text-text mr-3">04.</span> Technical Skills
             </h2>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-bg p-6 rounded-xl border border-border shadow-sm transition-all hover:shadow-lg hover:border-accent/50">
+                <div class="bg-bg p-6 rounded-xl border border-border shadow-sm transition-all  hover:border-border-strong">
                     <div class="flex items-center mb-6">
-                        <svg class="text-2xl text-accent w-8 w-5 h-5 inline-block"><use href="#icon-cube"></use></svg>
+                        <svg class="text-2xl text-text w-8 w-5 h-5 inline-block"><use href="#icon-cube"></use></svg>
                         <h3 class="text-lg font-bold text-text ml-2">Programming</h3>
                     </div>
                     <div class="flex flex-wrap gap-2 font-mono text-sm">
@@ -483,9 +483,9 @@
                     </div>
                 </div>
 
-                <div class="bg-bg p-6 rounded-xl border border-border shadow-sm transition-all hover:shadow-lg hover:border-accent/50">
+                <div class="bg-bg p-6 rounded-xl border border-border shadow-sm transition-all  hover:border-border-strong">
                     <div class="flex items-center mb-6">
-                        <svg class="text-2xl text-accent w-8 w-5 h-5 inline-block"><use href="#icon-cube"></use></svg>
+                        <svg class="text-2xl text-text w-8 w-5 h-5 inline-block"><use href="#icon-cube"></use></svg>
                         <h3 class="text-lg font-bold text-text ml-2">Perception</h3>
                     </div>
                     <div class="flex flex-wrap gap-2 font-mono text-sm">
@@ -498,9 +498,9 @@
                     </div>
                 </div>
 
-                <div class="bg-bg p-6 rounded-xl border border-border shadow-sm transition-all hover:shadow-lg hover:border-accent/50">
+                <div class="bg-bg p-6 rounded-xl border border-border shadow-sm transition-all  hover:border-border-strong">
                     <div class="flex items-center mb-6">
-                        <svg class="text-2xl text-accent w-8 w-5 h-5 inline-block"><use href="#icon-microchip"></use></svg>
+                        <svg class="text-2xl text-text w-8 w-5 h-5 inline-block"><use href="#icon-microchip"></use></svg>
                         <h3 class="text-lg font-bold text-text ml-2">Hardware</h3>
                     </div>
                     <div class="flex flex-wrap gap-2 font-mono text-sm">
@@ -512,9 +512,9 @@
                     </div>
                 </div>
 
-                <div class="bg-bg p-6 rounded-xl border border-border shadow-sm transition-all hover:shadow-lg hover:border-accent/50">
+                <div class="bg-bg p-6 rounded-xl border border-border shadow-sm transition-all  hover:border-border-strong">
                     <div class="flex items-center mb-6">
-                        <svg class="text-2xl text-accent w-8 w-5 h-5 inline-block"><use href="#icon-cube"></use></svg>
+                        <svg class="text-2xl text-text w-8 w-5 h-5 inline-block"><use href="#icon-cube"></use></svg>
                         <h3 class="text-lg font-bold text-text ml-2">Tools</h3>
                     </div>
                     <div class="flex flex-wrap gap-2 font-mono text-sm">
@@ -533,12 +533,12 @@
     <section id="achievements" class="py-24 px-4 z-10 relative bg-bg">
         <div class="max-w-5xl mx-auto reveal">
             <h2 class="text-3xl md:text-4xl font-bold text-text mb-12 font-mono flex items-center">
-                <span class="text-accent mr-3">05.</span> Achievements & Certifications
+                <span class="text-text mr-3">05.</span> Achievements & Certifications
             </h2>
             
             <div class="grid md:grid-cols-2 gap-8 mb-24">
-                <div class="bg-surface border border-border p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-xl font-bold text-text mb-6 border-b border-border pb-2 flex items-center"><svg class="text-accent mr-3 text-2xl w-5 h-5 inline-block"><use href="#icon-trophy"></use></svg> Key Achievements</h3>
+                <div class="bg-surface border border-border p-8 rounded-xl shadow-md  transition-shadow">
+                    <h3 class="text-xl font-bold text-text mb-6 border-b border-border pb-2 flex items-center"><svg class="text-text mr-3 text-2xl w-5 h-5 inline-block"><use href="#icon-trophy"></use></svg> Key Achievements</h3>
                     <ul class="space-y-4 text-text-muted">
                         <li class="flex items-start"><svg class="text-highlight mt-1 mr-3 text-xs w-5 h-5 inline-block"><use href="#icon-star"></use></svg><span><strong>National Semi-finalist</strong> – Janatics Automation Skill Challenge</span></li>
                         <li class="flex items-start"><svg class="text-highlight mt-1 mr-3 text-xs w-5 h-5 inline-block"><use href="#icon-star"></use></svg><span><strong>Research Internship</strong> – Indian Institute of Science (IISc)</span></li>
@@ -546,8 +546,8 @@
                     </ul>
                 </div>
                 
-                <div class="bg-surface border border-border p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-xl font-bold text-text mb-6 border-b border-border pb-2 flex items-center"><svg class="text-accent mr-3 text-2xl w-5 h-5 inline-block"><use href="#icon-award"></use></svg> Certifications</h3>
+                <div class="bg-surface border border-border p-8 rounded-xl shadow-md  transition-shadow">
+                    <h3 class="text-xl font-bold text-text mb-6 border-b border-border pb-2 flex items-center"><svg class="text-text mr-3 text-2xl w-5 h-5 inline-block"><use href="#icon-award"></use></svg> Certifications</h3>
                     <ul class="space-y-4 text-text-muted">
                         <li class="flex items-start"><svg class="text-highlight mt-1 mr-3 text-xs w-5 h-5 inline-block"><use href="#icon-award"></use></svg><span><strong>Industry 4.0</strong> – C4i4 Lab, Pune</span></li>
                         <li class="flex items-start"><svg class="text-highlight mt-1 mr-3 text-xs w-5 h-5 inline-block"><use href="#icon-award"></use></svg><span><strong>Industrial Automation Workshop</strong> – OMRON</span></li>
@@ -559,7 +559,7 @@
                 <svg class="text-5xl text-text-muted mb-6 transition-transform hover:scale-110 duration-300 w-5 h-5 inline-block"><use href="#icon-file"></use></svg>
                 <h2 class="text-3xl font-bold text-text mb-4">Curriculum Vitae</h2>
                 <p class="text-text-muted mb-8 max-w-xl mx-auto">For a comprehensive overview of my academic background, projects, and professional experience, please review my complete curriculum vitae.</p>
-                <a href="Jay_Gandhi_CV.pdf" target="_blank" class="magnetic inline-flex items-center bg-accent hover:bg-accent-hover text-accent-text px-8 py-3 rounded font-mono text-sm transition-all shadow-glow">
+                <a href="Jay_Gandhi_CV.pdf" target="_blank" class="magnetic inline-flex items-center bg-accent hover:bg-accent-hover text-on-accent px-8 py-3 rounded font-mono text-sm transition-all ">
                     <svg class="mr-2 w-5 h-5 inline-block"><use href="#icon-download"></use></svg> Download CV (PDF)
                 </a>
             </div>
@@ -573,29 +573,29 @@
             <p class="text-text-muted mb-8">Currently open to research collaborations, internship opportunities, and technical discussions.</p>
             
             <form id="contact-form" action="https://formspree.io/f/YOUR_ENDPOINT_HERE" method="POST" class="max-w-md mx-auto text-left mb-12 space-y-4">
-                <div class="font-mono text-xs text-accent mb-2">// TODO: Replace YOUR_ENDPOINT_HERE with actual Formspree endpoint</div>
+                <div class="font-mono text-xs text-text mb-2">// TODO: Replace YOUR_ENDPOINT_HERE with actual Formspree endpoint</div>
                 <div>
                     <label for="email" class="sr-only">Email</label>
-                    <input type="email" id="email" name="email" required placeholder="Your Email" class="w-full bg-surface-2 border border-border rounded px-4 py-2 text-text focus:border-accent transition-colors">
+                    <input type="email" id="email" name="email" required placeholder="Your Email" class="w-full bg-surface-2 border border-border rounded px-4 py-2 text-text focus:border-border-strong transition-colors">
                 </div>
                 <div>
                     <label for="message" class="sr-only">Message</label>
-                    <textarea id="message" name="message" required placeholder="Your Message" rows="4" class="w-full bg-surface-2 border border-border rounded px-4 py-2 text-text focus:border-accent resize-none transition-colors"></textarea>
+                    <textarea id="message" name="message" required placeholder="Your Message" rows="4" class="w-full bg-surface-2 border border-border rounded px-4 py-2 text-text focus:border-border-strong resize-none transition-colors"></textarea>
                 </div>
-                <button type="submit" class="w-full bg-accent hover:bg-accent-hover text-accent-text font-mono py-2 rounded transition-colors flex justify-center items-center shadow-glow">
+                <button type="submit" class="w-full bg-accent hover:bg-accent-hover text-on-accent font-mono py-2 rounded transition-colors flex justify-center items-center ">
                     <span>Send Message</span>
                     <i class="fas fa-paper-plane ml-2 hidden" id="submit-icon"></i>
                 </button>
                 <div id="form-success" class="hidden text-support text-sm font-mono text-center mt-2">Message sent successfully!</div>
             </form>
 
-            <button class="copy-email hover-expand inline-flex items-center text-xl text-accent hover:text-accent-hover transition-colors mb-12 font-mono border-b border-accent/30 pb-1">
+            <button class="copy-email hover-expand inline-flex items-center text-xl text-text hover:text-text transition-colors mb-12 font-mono border-b border-border-strong pb-1">
                 jaygandhi1314@gmail.com <svg class="ml-2 text-sm opacity-50 w-5 h-5 inline-block"><use href="#icon-copy"></use></svg>
             </button>
             
             <div class="flex justify-center space-x-8 text-text-muted text-2xl mb-12">
-                <a href="https://github.com/Jay86935" target="_blank" class="hover-expand hover:text-accent transition-colors" aria-label="GitHub"><svg class="w-5 h-5 inline-block"><use href="#icon-github"></use></svg></a>
-                <a href="https://linkedin.com/in/jay-gandhi57" target="_blank" class="hover-expand hover:text-accent transition-colors" aria-label="LinkedIn"><svg class="w-5 h-5 inline-block"><use href="#icon-linkedin"></use></svg></a>
+                <a href="https://github.com/Jay86935" target="_blank" class="hover-expand hover:text-text transition-colors" aria-label="GitHub"><svg class="w-5 h-5 inline-block"><use href="#icon-github"></use></svg></a>
+                <a href="https://linkedin.com/in/jay-gandhi57" target="_blank" class="hover-expand hover:text-text transition-colors" aria-label="LinkedIn"><svg class="w-5 h-5 inline-block"><use href="#icon-linkedin"></use></svg></a>
             </div>
             
             <p class="text-text-muted font-mono text-xs">
@@ -604,15 +604,15 @@
         </div>
     </footer>
 
-    <button id="back-to-top" class="fixed bottom-8 right-8 bg-accent text-accent-text w-10 h-10 rounded-full shadow-glow flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:bg-accent-hover z-40" aria-label="Back to top">
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-accent text-on-accent w-10 h-10 rounded-full  flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:bg-accent-hover z-40" aria-label="Back to top">
         <svg class="w-5 h-5 inline-block"><use href="#icon-arrow-up"></use></svg>
     </button>
 
     <!-- Lightbox Modal -->
     <div id="lightbox" class="fixed inset-0 z-[100] bg-bg/90 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center p-4" aria-modal="true" role="dialog">
-        <button id="lightbox-close" class="absolute top-6 right-6 text-text hover:text-accent text-3xl" aria-label="Close modal">&times;</button>
-        <button id="lightbox-prev" class="absolute left-4 md:left-10 text-text hover:text-accent text-4xl hidden md:block" aria-label="Previous image"><svg class="w-5 h-5 inline-block"><use href="#icon-arrow-right"></use></svg></button>
-        <button id="lightbox-next" class="absolute right-4 md:right-10 text-text hover:text-accent text-4xl hidden md:block" aria-label="Next image"><svg class="w-5 h-5 inline-block"><use href="#icon-arrow-right"></use></svg></button>
+        <button id="lightbox-close" class="absolute top-6 right-6 text-text hover:text-text text-3xl" aria-label="Close modal">&times;</button>
+        <button id="lightbox-prev" class="absolute left-4 md:left-10 text-text hover:text-text text-4xl hidden md:block" aria-label="Previous image"><svg class="w-5 h-5 inline-block"><use href="#icon-arrow-right"></use></svg></button>
+        <button id="lightbox-next" class="absolute right-4 md:right-10 text-text hover:text-text text-4xl hidden md:block" aria-label="Next image"><svg class="w-5 h-5 inline-block"><use href="#icon-arrow-right"></use></svg></button>
         
         <div class="max-w-4xl w-full bg-surface rounded-xl overflow-hidden shadow-2xl flex flex-col md:flex-row transform scale-95 transition-transform duration-300 border border-border" id="lightbox-content">
             <div class="md:w-3/5 bg-bg relative min-h-[300px] flex items-center justify-center">
@@ -620,7 +620,7 @@
             </div>
             <div class="md:w-2/5 p-6 md:p-8 flex flex-col h-full max-h-[50vh] md:max-h-[80vh] overflow-y-auto custom-scrollbar border-l border-border">
                 <h3 id="lightbox-title" class="text-2xl font-bold text-text mb-2">Project Title</h3>
-                <p id="lightbox-date" class="font-mono text-xs text-accent mb-6">Date</p>
+                <p id="lightbox-date" class="font-mono text-xs text-text mb-6">Date</p>
                 <p id="lightbox-desc" class="text-text-muted text-sm leading-relaxed mb-6 flex-grow">Project description goes here.</p>
                 <div id="lightbox-tags" class="flex flex-wrap gap-2 mb-6"></div>
                 <a id="lightbox-link" href="#" target="_blank" class="inline-flex items-center justify-center bg-surface-2 hover:bg-border border border-border text-text text-center px-4 py-2 rounded font-mono text-sm transition-colors mt-auto w-full">
@@ -633,4 +633,9 @@
     <script src="script.js" defer></script>
 </body>
 </html>
+
+
+
+
+
 
