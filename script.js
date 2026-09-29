@@ -16,7 +16,7 @@ const CONFIG = {
         "> retrieving portfolio data... OK",
         "> system ready."
     ],
-    terminalTypeSpeed: 40,
+    terminalTypeSpeed: 5,
     
     // "Now Building" widget content
     nowBuilding: "An autonomous swarm communication protocol for micro-UAVs using ESP32 mesh networks."
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const typeTerminal = () => {
             if (lineIdx >= CONFIG.terminalLines.length) {
-                setTimeout(closeTerminal, 800);
+                setTimeout(closeTerminal, 200);
                 return;
             }
             
@@ -105,9 +105,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (charIdx > line.length) {
                 lineIdx++;
                 charIdx = 0;
-                terminalTimeout = setTimeout(typeTerminal, 400); // Pause between lines
+                terminalTimeout = setTimeout(typeTerminal, 100); // Pause between lines
             } else {
-                terminalTimeout = setTimeout(typeTerminal, CONFIG.terminalTypeSpeed + (Math.random() * 30));
+                terminalTimeout = setTimeout(typeTerminal, CONFIG.terminalTypeSpeed);
             }
         };
 
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
             clearTimeout(terminalTimeout);
             terminal.classList.add('opacity-0');
             sessionStorage.setItem('introPlayed', 'true');
-            setTimeout(() => terminal.remove(), 500);
+            setTimeout(() => terminal.remove(), 300);
         };
 
         skipBtn.addEventListener('click', closeTerminal);
