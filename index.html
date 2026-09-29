@@ -3,105 +3,551 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body class="bg-gray-50 text-gray-900 font-sans antialiased">
+    <title>Jay Gandhi | Robotics & Embedded Systems Engineer</title>
+    <meta name="description" content="Portfolio of Jay Gandhi, an undergraduate Automation & Robotics Engineer specializing in embedded systems, autonomous systems, and perception.">
     
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Jay Gandhi | Robotics & Embedded Systems Engineer">
+    <meta property="og:description" content="Portfolio of Jay Gandhi, specializing in embedded systems, autonomous systems, and perception.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://Jay86935.github.io/jay-gandhi/">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Space Grotesk', 'monospace'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#141E2E',
+                            900: '#0F172A',
+                            950: '#0B1120',
+                        },
+                        accent: {
+                            500: '#3B82F6', // Blue
+                            600: '#2563EB',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-300 font-sans antialiased overflow-x-hidden selection:bg-accent-500 selection:text-white">
+
+    <!-- Background Pattern -->
+    <div class="fixed inset-0 z-[-1] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white shadow-md z-50">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between items-center py-4">
-                <a href="#" class="text-xl font-bold text-indigo-600">Academic Portfolio</a>
-                <div class="hidden md:flex space-x-6">
-                    <a href="#about" class="hover:text-indigo-600 transition">About</a>
-                    <a href="#projects" class="hover:text-indigo-600 transition">Projects</a>
-                    <a href="#research" class="hover:text-indigo-600 transition">Research & Publications</a>
-                    <a href="#cv" class="hover:text-indigo-600 transition">CV</a>
-                    <a href="#contact" class="hover:text-indigo-600 transition">Contact</a>
+    <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-slate-950/80 border-b border-slate-800" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#home" class="font-mono font-bold text-xl text-white tracking-tighter">
+                    <span class="text-accent-500">></span> JG
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-6 lg:space-x-8 font-mono text-sm">
+                    <a href="#about" class="hover:text-accent-500 transition-colors">About</a>
+                    <a href="#research" class="hover:text-accent-500 transition-colors">Research</a>
+                    <a href="#projects" class="hover:text-accent-500 transition-colors">Projects</a>
+                    <a href="#experience" class="hover:text-accent-500 transition-colors">Experience</a>
+                    <a href="#skills" class="hover:text-accent-500 transition-colors">Skills</a>
+                    <a href="#contact" class="hover:text-accent-500 transition-colors">Contact</a>
                 </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-mono text-sm">
+                <a href="#about" class="block px-3 py-2 rounded-md hover:bg-slate-800 text-white">About</a>
+                <a href="#research" class="block px-3 py-2 rounded-md hover:bg-slate-800 text-white">Research</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md hover:bg-slate-800 text-white">Projects</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md hover:bg-slate-800 text-white">Experience</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md hover:bg-slate-800 text-white">Skills</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md hover:bg-slate-800 text-white">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="pt-32 pb-20 px-4 bg-gradient-to-r from-indigo-50 to-blue-50">
-        <div class="max-w-4xl mx-auto text-center mt-10">
-            <h1 class="text-5xl font-extrabold text-gray-900 mb-6">Hello, I'm a Researcher</h1>
-            <p class="text-xl text-gray-600 mb-10">Advancing the boundaries of knowledge through innovative research and engineering.</p>
-            <div class="flex justify-center space-x-4">
-                <a href="#contact" class="bg-indigo-600 text-white px-6 py-3 rounded-full font-medium hover:bg-indigo-700 transition shadow-lg">Get in Touch</a>
-                <a href="#cv" class="bg-white text-indigo-600 border border-indigo-600 px-6 py-3 rounded-full font-medium hover:bg-indigo-50 transition shadow-lg">View CV</a>
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20 px-4 relative">
+        <div class="max-w-4xl mx-auto w-full reveal">
+            <div class="mb-4 inline-block">
+                <span class="font-mono text-accent-500 font-medium tracking-wide">Sys_Init: System Online</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight">Jay Gandhi.</h1>
+            <h2 class="text-2xl md:text-4xl font-semibold text-slate-400 mb-6 font-mono">
+                Robotics & Embedded Systems Engineer.
+            </h2>
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mb-10 leading-relaxed">
+                Building intelligent robotic and embedded systems at the intersection of perception, autonomy, electronics, and real-time control.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="#projects" class="bg-accent-600 hover:bg-accent-500 text-white px-6 py-3 rounded font-mono text-sm transition-all shadow-[0_0_15px_rgba(37,99,235,0.3)]">
+                    <i class="fas fa-microchip mr-2"></i>View Projects
+                </a>
+                <a href="#research" class="border border-slate-600 hover:border-slate-400 text-white px-6 py-3 rounded font-mono text-sm transition-all hover:bg-slate-800">
+                    <i class="fas fa-flask mr-2"></i>Research
+                </a>
+                <a href="Jay_Gandhi_CV.pdf" target="_blank" class="border border-slate-600 hover:border-slate-400 text-white px-6 py-3 rounded font-mono text-sm transition-all hover:bg-slate-800">
+                    <i class="fas fa-file-pdf mr-2"></i>Download CV
+                </a>
+            </div>
+            
+            <div class="mt-12 flex gap-6">
+                <a href="https://github.com/Jay86935" target="_blank" class="text-slate-400 hover:text-white text-2xl transition-colors" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/jay-gandhi57" target="_blank" class="text-slate-400 hover:text-white text-2xl transition-colors" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:jaygandhi1314@gmail.com" class="text-slate-400 hover:text-white text-2xl transition-colors" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold mb-8 text-center">About Me</h2>
-            <p class="text-lg text-gray-700 leading-relaxed text-center">
-                I am an academic and researcher passionate about solving complex problems. My work spans various domains of science and engineering. I strive to create impactful solutions and contribute to the global academic community.
-            </p>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 px-4 bg-gray-100">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-12 text-center">Projects</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Project Card -->
-                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition">
-                    <h3 class="text-xl font-bold mb-3">Project Alpha</h3>
-                    <p class="text-gray-600 mb-4">A brief description of the project detailing the methodology and outcomes.</p>
-                    <a href="#" class="text-indigo-600 font-medium hover:underline">View on GitHub <i class="fab fa-github"></i></a>
+    <section id="about" class="py-24 px-4 bg-slate-900 border-y border-slate-800">
+        <div class="max-w-5xl mx-auto reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 font-mono flex items-center">
+                <span class="text-accent-500 mr-3">01.</span> About Me
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-6 text-slate-300 text-lg leading-relaxed">
+                    <p>
+                        I am an undergraduate Automation & Robotics Engineer driven by a passion for solving complex hardware-software integration problems.
+                    </p>
+                    <p>
+                        My academic and technical narrative is focused on autonomous systems, robotic perception, and real-time control. I design embedded solutions that bridge high-level algorithms with edge-computing hardware, enabling robots to navigate and interact with dynamic environments.
+                    </p>
+                    
+                    <div class="p-5 border border-slate-700 bg-slate-850 rounded font-mono text-sm mt-8">
+                        <div class="text-accent-500 mb-2">// Education</div>
+                        <h3 class="text-white font-bold text-lg">B.Tech – Automation & Robotics Engineering</h3>
+                        <p class="text-slate-400 mt-1">JSPM Rajarshi Shahu College of Engineering, Pune</p>
+                        <div class="flex justify-between mt-2 text-slate-500">
+                            <span>2023–2027</span>
+                            <span class="text-accent-500">CGPA: 8.29/10</span>
+                        </div>
+                    </div>
                 </div>
-                <!-- Project Card -->
-                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition">
-                    <h3 class="text-xl font-bold mb-3">Project Beta</h3>
-                    <p class="text-gray-600 mb-4">A brief description of the project detailing the methodology and outcomes.</p>
-                    <a href="#" class="text-indigo-600 font-medium hover:underline">View on GitHub <i class="fab fa-github"></i></a>
+                
+                <div>
+                    <h3 class="text-xl font-mono text-white mb-6">Engineering Focus</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 border border-slate-800 bg-slate-950 rounded hover:border-accent-500 transition-colors group">
+                            <i class="fas fa-robot text-2xl text-slate-600 group-hover:text-accent-500 mb-3 transition-colors"></i>
+                            <h4 class="font-bold text-white text-sm">Autonomous Robotics</h4>
+                        </div>
+                        <div class="p-4 border border-slate-800 bg-slate-950 rounded hover:border-accent-500 transition-colors group">
+                            <i class="fas fa-microchip text-2xl text-slate-600 group-hover:text-accent-500 mb-3 transition-colors"></i>
+                            <h4 class="font-bold text-white text-sm">Embedded Systems</h4>
+                        </div>
+                        <div class="p-4 border border-slate-800 bg-slate-950 rounded hover:border-accent-500 transition-colors group">
+                            <i class="fas fa-eye text-2xl text-slate-600 group-hover:text-accent-500 mb-3 transition-colors"></i>
+                            <h4 class="font-bold text-white text-sm">Computer Vision</h4>
+                        </div>
+                        <div class="p-4 border border-slate-800 bg-slate-950 rounded hover:border-accent-500 transition-colors group">
+                            <i class="fas fa-satellite-dish text-2xl text-slate-600 group-hover:text-accent-500 mb-3 transition-colors"></i>
+                            <h4 class="font-bold text-white text-sm">Sensor Fusion</h4>
+                        </div>
+                        <div class="p-4 border border-slate-800 bg-slate-950 rounded hover:border-accent-500 transition-colors group">
+                            <i class="fas fa-tachometer-alt text-2xl text-slate-600 group-hover:text-accent-500 mb-3 transition-colors"></i>
+                            <h4 class="font-bold text-white text-sm">Real-Time Control</h4>
+                        </div>
+                        <div class="p-4 border border-slate-800 bg-slate-950 rounded hover:border-accent-500 transition-colors group">
+                            <i class="fas fa-cogs text-2xl text-slate-600 group-hover:text-accent-500 mb-3 transition-colors"></i>
+                            <h4 class="font-bold text-white text-sm">Industrial Automation</h4>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Research & Publications Section -->
-    <section id="research" class="py-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold mb-12 text-center">Research & Publications</h2>
-            <ul class="space-y-6">
-                <li class="border-l-4 border-indigo-600 pl-4 py-2">
-                    <h4 class="text-lg font-bold">Paper Title 1</h4>
-                    <p class="text-gray-600">Conference/Journal Name, 2026</p>
-                    <a href="#" class="text-sm text-indigo-500 hover:underline">Read Paper</a> | <a href="#" class="text-sm text-indigo-500 hover:underline">Overleaf Project</a>
-                </li>
-                <li class="border-l-4 border-indigo-600 pl-4 py-2">
-                    <h4 class="text-lg font-bold">Paper Title 2</h4>
-                    <p class="text-gray-600">Conference/Journal Name, 2025</p>
-                    <a href="#" class="text-sm text-indigo-500 hover:underline">Read Paper</a> | <a href="#" class="text-sm text-indigo-500 hover:underline">Overleaf Project</a>
-                </li>
-            </ul>
+    <!-- Research Section -->
+    <section id="research" class="py-24 px-4 relative">
+        <div class="max-w-4xl mx-auto reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 font-mono flex items-center">
+                <span class="text-accent-500 mr-3">02.</span> Research
+            </h2>
+            
+            <div class="relative border-l-2 border-slate-800 pl-8 pb-8">
+                <div class="absolute w-4 h-4 bg-accent-500 rounded-full -left-[9px] top-1"></div>
+                
+                <div class="flex flex-wrap justify-between items-start mb-2">
+                    <h3 class="text-2xl font-bold text-white">Research Intern – Robotics & Autonomous Systems</h3>
+                    <span class="font-mono text-accent-500 bg-accent-500/10 px-3 py-1 rounded text-sm mt-1 sm:mt-0">Feb 2026 – Present</span>
+                </div>
+                <h4 class="text-lg text-slate-400 font-mono mb-6">Indian Institute of Science (IISc), Bengaluru</h4>
+                
+                <ul class="space-y-3 text-slate-300">
+                    <li class="flex items-start">
+                        <i class="fas fa-chevron-right text-accent-500 mt-1 mr-3 text-sm"></i>
+                        <span>Contributing to an advanced robotics research project focusing on autonomous perception architectures and embedded control for dynamic environments.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-chevron-right text-accent-500 mt-1 mr-3 text-sm"></i>
+                        <span>Implementing ROS to bridge high-level path planning algorithms with edge-computing hardware.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-chevron-right text-accent-500 mt-1 mr-3 text-sm"></i>
+                        <span>Developing real-time vision pipelines and autonomous navigation models deployed on embedded Linux systems (Nvidia Jetson Nano, Raspberry Pi).</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-chevron-right text-accent-500 mt-1 mr-3 text-sm"></i>
+                        <span>Programming STM32 microcontrollers for deterministic motor actuation and IMU/encoder sensor acquisition.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-chevron-right text-accent-500 mt-1 mr-3 text-sm"></i>
+                        <span>Developing custom sensor fusion nodes to reduce perception-to-actuation latency and localization drift.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section (Dhruvishaya & JASC) -->
+    <section id="experience" class="py-24 px-4 bg-slate-900 border-y border-slate-800">
+        <div class="max-w-4xl mx-auto reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 font-mono flex items-center">
+                <span class="text-accent-500 mr-3">03.</span> Experience & Leadership
+            </h2>
+            
+            <div class="space-y-12">
+                <!-- Team Dhruvishaya -->
+                <div class="relative border-l-2 border-slate-800 pl-8">
+                    <div class="absolute w-4 h-4 bg-slate-600 rounded-full -left-[9px] top-1"></div>
+                    <div class="flex flex-wrap justify-between items-start mb-2">
+                        <h3 class="text-2xl font-bold text-white">Founder & Avionics Lead</h3>
+                        <span class="font-mono text-slate-400 bg-slate-800 px-3 py-1 rounded text-sm mt-1 sm:mt-0">Feb 2025 – Present</span>
+                    </div>
+                    <h4 class="text-lg text-accent-400 font-mono mb-4 text-accent-500">Team Dhruvishaya – Rocketry & Space Research</h4>
+                    <p class="text-slate-300 mb-4">Founded collegiate rocketry team and led the design of the avionics stack for an experimental solid-propellant rocket platform, overseeing schematic through firmware to field validation.</p>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li><i class="fas fa-angle-right text-accent-500 mr-2"></i> Designed power, sensing, telemetry, and ignition electronics.</li>
+                        <li><i class="fas fa-angle-right text-accent-500 mr-2"></i> Engineered hardware interlocks and motor-control electronics for static fire testing.</li>
+                        <li><i class="fas fa-angle-right text-accent-500 mr-2"></i> Implemented onboard data logging for pressure, temperature, and IMU.</li>
+                        <li><i class="fas fa-angle-right text-accent-500 mr-2"></i> Developed wireless ground-station telemetry.</li>
+                    </ul>
+                </div>
+
+                <!-- JASC -->
+                <div class="relative border-l-2 border-slate-800 pl-8">
+                    <div class="absolute w-4 h-4 bg-slate-600 rounded-full -left-[9px] top-1"></div>
+                    <div class="flex flex-wrap justify-between items-start mb-2">
+                        <h3 class="text-2xl font-bold text-white">Electronics Lead</h3>
+                        <span class="font-mono text-slate-400 bg-slate-800 px-3 py-1 rounded text-sm mt-1 sm:mt-0">Sep 2025 – Nov 2025</span>
+                    </div>
+                    <h4 class="text-lg text-accent-400 font-mono mb-4 text-accent-500">Janatics Automation Skill Challenge (JASC)</h4>
+                    <p class="text-slate-300 mb-4">Led electronics and system integration for an automated industrial waste-sorting system using Siemens TIA Portal and Arduino Mega.</p>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li><i class="fas fa-angle-right text-accent-500 mr-2"></i> Integrated inductive, capacitive, and IR sensors.</li>
+                        <li><i class="fas fa-angle-right text-accent-500 mr-2"></i> Achieved ~95% classification accuracy and ~30 items/min throughput.</li>
+                        <li><i class="fas fa-angle-right text-accent-500 mr-2"></i> Recognized as a National Semi-finalist among 200+ teams.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 px-4">
+        <div class="max-w-6xl mx-auto reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 font-mono flex items-center">
+                <span class="text-accent-500 mr-3">04.</span> Featured Projects
+            </h2>
+
+            <!-- Filters -->
+            <div class="flex flex-wrap gap-3 mb-10 font-mono text-sm" id="project-filters">
+                <button class="filter-btn active bg-accent-600 text-white px-4 py-2 rounded" data-filter="all">ALL</button>
+                <button class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-4 py-2 rounded transition-colors" data-filter="robotics">ROBOTICS</button>
+                <button class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-4 py-2 rounded transition-colors" data-filter="embedded">EMBEDDED</button>
+                <button class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-4 py-2 rounded transition-colors" data-filter="autonomous">AUTONOMOUS</button>
+                <button class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-4 py-2 rounded transition-colors" data-filter="vision">VISION</button>
+                <button class="filter-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-4 py-2 rounded transition-colors" data-filter="automation">AUTOMATION</button>
+            </div>
+
+            <!-- Project Grid -->
+            <div class="grid lg:grid-cols-2 gap-8" id="project-grid">
+                
+                <!-- AgroBot -->
+                <div class="project-card bg-slate-900 border border-slate-800 rounded-lg overflow-hidden group hover:-translate-y-2 transition-transform duration-300 shadow-lg" data-category="robotics autonomous vision">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-tractor text-3xl text-accent-500"></i>
+                            <div class="flex gap-3 text-slate-400">
+                                <a href="https://github.com/Jay86935/AgroBot-Navigation-Monitoring-System-" target="_blank" class="hover:text-white transition-colors" aria-label="GitHub"><i class="fab fa-github text-xl"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-accent-500 transition-colors">AgroBot</h3>
+                        <p class="font-mono text-xs text-slate-500 mb-4">Mar 2026 – Apr 2026 | Autonomous Agricultural Monitoring Robot</p>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            Differential-drive robot for autonomous field monitoring. Features OpenCV-based lane detection, ultrasonic/IR/IMU sensor fusion for obstacle avoidance, and path correction with < 2% deviation on a 5m × 3m test grid. ESP32 Wi-Fi telemetry provides live sensor data and camera feeds to a web dashboard.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="text-xs font-mono text-accent-400 bg-accent-500/10 px-2 py-1 rounded">OpenCV</span>
+                            <span class="text-xs font-mono text-accent-400 bg-accent-500/10 px-2 py-1 rounded">Raspberry Pi</span>
+                            <span class="text-xs font-mono text-accent-400 bg-accent-500/10 px-2 py-1 rounded">ESP32</span>
+                            <span class="text-xs font-mono text-accent-400 bg-accent-500/10 px-2 py-1 rounded">Sensor Fusion</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Long-Range Wireless -->
+                <div class="project-card bg-slate-900 border border-slate-800 rounded-lg overflow-hidden group hover:-translate-y-2 transition-transform duration-300 shadow-lg" data-category="embedded">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-broadcast-tower text-3xl text-accent-500"></i>
+                            <div class="flex gap-3 text-slate-400">
+                                <a href="https://github.com/Jay86935/Long-Range-nRF24-Wireless-Control" target="_blank" class="hover:text-white transition-colors" aria-label="GitHub"><i class="fab fa-github text-xl"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-accent-500 transition-colors">Long-Range Wireless Control System</h3>
+                        <p class="font-mono text-xs text-slate-500 mb-4">Jan 2023 – Feb 2023 | 1km RF Telemetry</p>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            A 1 km-range RF control system utilizing nRF24L01+ modules. Implemented a custom packet protocol, adaptive retry logic, and failsafe motor-disarm logic achieving a signal timeout under 50 ms and 99% packet delivery at 800 m line-of-sight. Adopted as the platform communication layer for rocketry ground station.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="text-xs font-mono text-accent-400 bg-accent-500/10 px-2 py-1 rounded">Arduino</span>
+                            <span class="text-xs font-mono text-accent-400 bg-accent-500/10 px-2 py-1 rounded">nRF24L01+</span>
+                            <span class="text-xs font-mono text-accent-400 bg-accent-500/10 px-2 py-1 rounded">Embedded C</span>
+                            <span class="text-xs font-mono text-accent-400 bg-accent-500/10 px-2 py-1 rounded">RF Protocol</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8x8x8 LED Cube -->
+                <div class="project-card bg-slate-900 border border-slate-800 rounded-lg overflow-hidden group hover:-translate-y-2 transition-transform duration-300 shadow-lg" data-category="embedded">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-cube text-3xl text-accent-500"></i>
+                            <div class="flex gap-3 text-slate-400">
+                                <a href="https://github.com/Jay86935/8x8x8-LED-Cube-512-LEDs-" target="_blank" class="hover:text-white transition-colors" aria-label="GitHub"><i class="fab fa-github text-xl"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-accent-500 transition-colors">8x8x8 LED Cube</h3>
+                        <p class="font-mono text-xs text-slate-500 mb-4">Hardware & Firmware Design</p>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            Designed and fabricated a 512-LED volumetric display. Involved complex shift-register multiplexing, custom PCB design, and embedded firmware to render 3D spatial animations efficiently.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="text-xs font-mono text-accent-400 bg-accent-500/10 px-2 py-1 rounded">Hardware</span>
+                            <span class="text-xs font-mono text-accent-400 bg-accent-500/10 px-2 py-1 rounded">Multiplexing</span>
+                            <span class="text-xs font-mono text-accent-400 bg-accent-500/10 px-2 py-1 rounded">C/C++</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ultrasonic Levitation -->
+                <div class="project-card bg-slate-900 border border-slate-800 rounded-lg overflow-hidden group hover:-translate-y-2 transition-transform duration-300 shadow-lg" data-category="embedded">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-wave-square text-3xl text-accent-500"></i>
+                            <div class="flex gap-3 text-slate-400">
+                                <a href="https://github.com/Jay86935/Ultrasonic_Levitation" target="_blank" class="hover:text-white transition-colors" aria-label="GitHub"><i class="fab fa-github text-xl"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-accent-500 transition-colors">Acoustic Levitation</h3>
+                        <p class="font-mono text-xs text-slate-500 mb-4">Physics & Electronics Integration</p>
+                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                            Engineered an ultrasonic levitation device utilizing phased transducer arrays to trap small particles in acoustic standing waves. Required high-frequency signal generation and precise physical alignment.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="text-xs font-mono text-accent-400 bg-accent-500/10 px-2 py-1 rounded">Acoustics</span>
+                            <span class="text-xs font-mono text-accent-400 bg-accent-500/10 px-2 py-1 rounded">Transducers</span>
+                            <span class="text-xs font-mono text-accent-400 bg-accent-500/10 px-2 py-1 rounded">Electronics</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="https://github.com/Jay86935" target="_blank" class="inline-block border border-slate-600 hover:border-accent-500 text-white px-8 py-3 rounded font-mono text-sm transition-all hover:bg-slate-900">
+                    <i class="fab fa-github mr-2"></i>View all projects on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 px-4 bg-slate-900 border-y border-slate-800">
+        <div class="max-w-5xl mx-auto reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 font-mono flex items-center">
+                <span class="text-accent-500 mr-3">05.</span> Technical Skills
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Programming -->
+                <div class="bg-slate-950 p-6 rounded-lg border border-slate-800 hover:border-accent-500 transition-colors group">
+                    <div class="text-accent-500 mb-4">
+                        <i class="fas fa-code text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-4">Programming</h3>
+                    <ul class="space-y-2 text-slate-400 font-mono text-sm">
+                        <li class="flex items-center"><i class="fas fa-check text-accent-500 text-xs mr-2"></i> C / C++</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-500 text-xs mr-2"></i> Embedded C</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-500 text-xs mr-2"></i> Python</li>
+                    </ul>
+                </div>
+
+                <!-- Robotics & Perception -->
+                <div class="bg-slate-950 p-6 rounded-lg border border-slate-800 hover:border-accent-500 transition-colors group">
+                    <div class="text-accent-500 mb-4">
+                        <i class="fas fa-robot text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-4">Robotics & Perception</h3>
+                    <ul class="space-y-2 text-slate-400 font-mono text-sm">
+                        <li class="flex items-center"><i class="fas fa-check text-accent-500 text-xs mr-2"></i> ROS / ROS2</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-500 text-xs mr-2"></i> OpenCV</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-500 text-xs mr-2"></i> Sensor Fusion</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-500 text-xs mr-2"></i> SLAM (Exposure)</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-500 text-xs mr-2"></i> Stereo Vision</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-500 text-xs mr-2"></i> Motor Control</li>
+                    </ul>
+                </div>
+
+                <!-- Hardware & Embedded -->
+                <div class="bg-slate-950 p-6 rounded-lg border border-slate-800 hover:border-accent-500 transition-colors group">
+                    <div class="text-accent-500 mb-4">
+                        <i class="fas fa-microchip text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-4">Hardware</h3>
+                    <ul class="space-y-2 text-slate-400 font-mono text-sm">
+                        <li class="flex items-center"><i class="fas fa-check text-accent-500 text-xs mr-2"></i> STM32 / ESP32 / ESP8266</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-500 text-xs mr-2"></i> Nvidia Jetson Nano</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-500 text-xs mr-2"></i> Raspberry Pi</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-500 text-xs mr-2"></i> Arduino</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-500 text-xs mr-2"></i> nRF24L01</li>
+                    </ul>
+                </div>
+
+                <!-- Automation & Tools -->
+                <div class="bg-slate-950 p-6 rounded-lg border border-slate-800 hover:border-accent-500 transition-colors group">
+                    <div class="text-accent-500 mb-4">
+                        <i class="fas fa-tools text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-4">Automation & Tools</h3>
+                    <ul class="space-y-2 text-slate-400 font-mono text-sm">
+                        <li class="flex items-center"><i class="fas fa-check text-accent-500 text-xs mr-2"></i> Siemens TIA Portal</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-500 text-xs mr-2"></i> Factory I/O & Sysmac</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-500 text-xs mr-2"></i> MATLAB</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-500 text-xs mr-2"></i> KiCad / LTspice</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent-500 text-xs mr-2"></i> Fusion 360</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements & Certifications -->
+    <section id="achievements" class="py-24 px-4">
+        <div class="max-w-5xl mx-auto reveal">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 font-mono flex items-center">
+                <span class="text-accent-500 mr-3">06.</span> Achievements & Certifications
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Achievements -->
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold text-white mb-6 border-b border-slate-800 pb-2"><i class="fas fa-trophy text-accent-500 mr-2"></i> Key Achievements</h3>
+                    <ul class="space-y-4 text-slate-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-star text-accent-500 mt-1 mr-3 text-xs"></i>
+                            <span><strong>National Semi-finalist</strong> – Janatics Automation Skill Challenge</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-star text-accent-500 mt-1 mr-3 text-xs"></i>
+                            <span><strong>Research Internship</strong> – Indian Institute of Science (IISc), Bengaluru</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-star text-accent-500 mt-1 mr-3 text-xs"></i>
+                            <span><strong>Collaboration Exposure</strong> – Purdue EPICS Program</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Certifications -->
+                <div class="bg-slate-900 border border-slate-800 p-8 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold text-white mb-6 border-b border-slate-800 pb-2"><i class="fas fa-certificate text-accent-500 mr-2"></i> Certifications</h3>
+                    <ul class="space-y-4 text-slate-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-award text-accent-500 mt-1 mr-3 text-xs"></i>
+                            <span><strong>Industry 4.0</strong> – C4i4 Lab, Pune</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-award text-accent-500 mt-1 mr-3 text-xs"></i>
+                            <span><strong>Industrial Automation Workshop</strong> – OMRON</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CV Section -->
+    <section id="cv" class="py-24 px-4 bg-slate-900 border-t border-slate-800 text-center">
+        <div class="max-w-3xl mx-auto reveal">
+            <i class="fas fa-file-alt text-5xl text-slate-700 mb-6"></i>
+            <h2 class="text-3xl font-bold text-white mb-4">Curriculum Vitae</h2>
+            <p class="text-slate-400 mb-8 max-w-xl mx-auto">For a comprehensive overview of my academic background, projects, and professional experience, please review my complete curriculum vitae.</p>
+            <a href="Jay_Gandhi_CV.pdf" target="_blank" class="inline-block bg-accent-600 hover:bg-accent-500 text-white px-8 py-3 rounded font-mono text-sm transition-all shadow-[0_0_15px_rgba(37,99,235,0.3)]">
+                <i class="fas fa-download mr-2"></i> Download CV (PDF)
+            </a>
         </div>
     </section>
 
     <!-- Footer / Contact -->
-    <footer id="contact" class="bg-gray-900 text-white py-12 px-4 text-center">
-        <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
-        <p class="mb-8">Interested in collaborating or have questions? Feel free to reach out.</p>
-        <a href="mailto:your.email@example.com" class="text-xl hover:text-indigo-400 transition"><i class="fas fa-envelope mr-2"></i> your.email@example.com</a>
-        
-        <div class="mt-8 flex justify-center space-x-6 text-2xl">
-            <a href="#" class="hover:text-indigo-400 transition" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="#" class="hover:text-indigo-400 transition" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="hover:text-indigo-400 transition" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <!-- Using an icon for Overleaf, like file-pdf or pen-nib -->
-            <a href="#" class="hover:text-indigo-400 transition" aria-label="Overleaf"><i class="fas fa-leaf"></i></a> 
+    <footer id="contact" class="bg-slate-950 border-t border-slate-800 pt-16 pb-8 px-4 text-center">
+        <div class="max-w-2xl mx-auto reveal">
+            <h2 class="text-3xl font-bold text-white mb-4 font-mono">Get In Touch</h2>
+            <p class="text-slate-400 mb-8">Currently open to research collaborations, internship opportunities, and technical discussions.</p>
+            
+            <a href="mailto:jaygandhi1314@gmail.com" class="inline-block text-xl text-accent-400 hover:text-accent-300 transition-colors mb-12 font-mono border-b border-accent-500/30 pb-1">
+                jaygandhi1314@gmail.com
+            </a>
+            
+            <div class="flex justify-center space-x-8 text-slate-500 text-2xl mb-12">
+                <a href="https://github.com/Jay86935" target="_blank" class="hover:text-accent-500 transition-colors" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/jay-gandhi57" target="_blank" class="hover:text-accent-500 transition-colors" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+            
+            <p class="text-slate-600 font-mono text-xs">
+                &copy; 2026 Jay Gandhi. Designed & Built for Engineering.
+            </p>
         </div>
-        <p class="mt-8 text-gray-500 text-sm">&copy; 2026 Academic Portfolio. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>

@@ -1,23 +1,64 @@
-/* Custom styles on top of Tailwind */
+/* Custom styling for the portfolio */
 html {
     scroll-behavior: smooth;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Custom scrollbar */
+/* Base custom scrollbar */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
 }
 ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+    background: #0B1120; /* slate-950 */
 }
 ::-webkit-scrollbar-thumb {
-    background: #c7c7cc; 
-    border-radius: 4px;
+    background: #334155; /* slate-700 */
+    border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #a1a1a6; 
+    background: #475569; /* slate-600 */
+}
+
+/* Selection */
+::selection {
+    background-color: #3B82F6;
+    color: white;
+}
+
+/* Scroll reveal initial states */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Filter buttons */
+.filter-btn {
+    position: relative;
+    overflow: hidden;
+}
+.filter-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #60A5FA;
+}
+
+/* Navbar active state */
+.nav-active {
+    color: #3B82F6 !important;
+}
+
+/* Project card display toggle */
+.project-card {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.project-card.hide {
+    display: none;
 }
