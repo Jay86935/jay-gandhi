@@ -87,12 +87,12 @@ html {
 .shadow-glow-soft { box-shadow: 0 10px 30px var(--accent-soft); }
 
 /* Scroll reveal */
-.reveal {
+/* .reveal {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-.reveal.active {
+/* .reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
@@ -201,7 +201,7 @@ a { color: inherit; text-decoration: none; }
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
-    .reveal { opacity: 1; transform: none; }
+    /* .reveal { opacity: 1; transform: none; }
     .project-card { transform: none !important; }
 }
 
@@ -211,4 +211,21 @@ a { color: inherit; text-decoration: none; }
     .project-card:hover { transform: translateY(-4px) !important; }
     .spotlight { display: none !important; }
     #hero-canvas { opacity: 0.2; }
+}
+
+/* === RESILIENCY OVERRIDES === */
+.reveal, .stagger-grid > div {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+html.js .reveal, html.js .stagger-grid > div {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+html.js .reveal.active, html.js .stagger-grid > div.active {
+    opacity: 1;
+    transform: translateY(0);
 }
