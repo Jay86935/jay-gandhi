@@ -1,0 +1,30 @@
+name: Portfolio Quality Check
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check HTML Links
+        uses: lycheeverse/lychee-action@v1.9.0
+        with:
+          args: --base . '*.html' '**/*.html' --accept 200,429,999
+
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit URL using Lighthouse
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: |
+            https://jay86935.github.io/jay-gandhi/
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          runs: 3
